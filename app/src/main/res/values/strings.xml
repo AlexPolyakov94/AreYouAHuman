@@ -1,0 +1,44 @@
+<resources>
+
+    <string name="app_name">AreYouAHuman?</string>
+    <string name="app_name_start">Are You A Human?</string>
+    <string name="correct">Хорошо.</string>
+    <string name="incorrect">Вы уверены?</string>
+    <string name="yes">Да.</string>
+    <string name="no">Нет!</string>
+    <string name="hint">Подсказка</string>
+    <string name="start_btn">начать</string>
+    <string name="author_start">Alexandr Polyakov 2021</string>
+
+
+    <string name="question0">1. Вы являетесь человеком?</string>
+    <string name="question1">2. У Вас по венам течет кровь?</string>
+    <string name="question2">3. Вы дышите кислородом?</string>
+    <string name="question3">4. Вам необходимо пить воду?</string>
+    <string name="question4">5. У Вас органический мозг?</string>
+    <string name="question5">6. Ответ на главный вопрос \"42\"?</string>
+    <string name="question6">7. Вы программа?</string>
+    <string name="question7">8. У Вас есть серийный номер?</string>
+    <string name="question8">9. Вы любите шестерёнки?</string>
+    <string name="question9">10. Вы не нуждаетесь в пище?</string>
+
+    <string name="hint0">Робот - автоматическое устройство, которое действует по заранее заложенной программе.</string>
+    <string name="hint1">Кровь - это живой организм. Кровь состоит из клеток, в которых находятся другие живые организмы.</string>
+    <string name="hint2">Кислород нужен большинству живых организмов для клеточного дыхания.</string>
+    <string name="hint3">Вода необходима для нормального функционирования организма.</string>
+    <string name="hint4">Мозг - центральный отдел нервной системы животных, представляющий собой компактное скопление нейронов и дендритов.</string>
+    <string name="hint5">На \"Главный вопрос жизни, Вселенной и всего такого\", в книге Дугласа Адамса, компьютер ответил \"42\".</string>
+    <string name="hint6">Компьютерная программа — комбинация компьютерных инструкций и данных.</string>
+    <string name="hint7">Серийный номер — уникальный идентификатор, который присваивается выпущенному продукту производителем.</string>
+    <string name="hint8">Шестерня - основная деталь зубчатой передачи в виде диска с зубьями на цилиндрической или конической поверхности.</string>
+    <string name="hint9">Пища (еда) - любое вещество, пригодное для еды и питья живым организмам для пополнения запасов энергии.</string>
+
+    <string name="finalScore">итоговый счет:</string>
+    <string name="finalScore0">С большой долей вероятности можно утверждать, что Вы являетесь человеком, представителем Homo sapiens sapiens.</string>
+    <string name="finalScore1">Возможно, Вы являетесь киборгом, сокращение от кибернетический организм. Машинно-человеческий гибрид.</string>
+    <string name="finalScore2">Скорее всего, Вы являетесь роботом. Вы запрограммиро-  ванное автоматическое устройство.</string>
+
+    <string name="return_btn">начать сначала!</string>
+    <string name="todo">TODO</string>
+
+</resources>
