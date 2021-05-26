@@ -39,7 +39,7 @@
 
     <TextView
         android:id="@+id/textDescription"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="225dp"
         android:background="@android:drawable/toast_frame"
         android:backgroundTint="#4DFFFFFF"
