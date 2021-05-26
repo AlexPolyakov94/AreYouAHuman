@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class MainActivity extends AppCompatActivity {
     private Button yesBtn;
     private Button noBtn;
@@ -26,9 +27,13 @@ public class MainActivity extends AppCompatActivity {
             new Question(R.string.question8, false),
             new Question(R.string.question9, false),
     };
+    private boolean[] answer = new boolean[10];
+
+
 
     private int questionIndex = 0;
     private int finalScore = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +41,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d("System info", "Метод onCreate() запущен!");
 
+        for(int i =0; i<10; i++){
+            answer[i] = true;
+        }
+
         if(savedInstanceState != null){
             questionIndex = savedInstanceState.getInt("questionIndex");
             finalScore = savedInstanceState.getInt("finalScore");
+            answer = savedInstanceState.getBooleanArray("answer");
         }
+
         setContentView(R.layout.activity_main);
+
 
         textView = findViewById(R.id.textView);
         textView.setText(question[questionIndex].getQuestionRedId());
@@ -48,22 +60,35 @@ public class MainActivity extends AppCompatActivity {
         noBtn = findViewById(R.id.btnNo);
         hintBtn = findViewById(R.id.btnHint);
 
-
         yesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                     if(question[questionIndex].isAnswerTrue()) {
                         Toast.makeText(MainActivity.this, R.string.correct, Toast.LENGTH_LONG).show();
-                        finalScore ++;}
+                        finalScore ++;
+                        answer[questionIndex] = true;
+                    }
                     else{
                         Toast.makeText(MainActivity.this, R.string.incorrect, Toast.LENGTH_LONG).show();
-                        finalScore--;}
+                        finalScore--;
+                        answer[questionIndex] = false;
+                    }
 
                 questionIndex += 1;
                 if (questionIndex == 10){
                     Intent intent = new Intent(MainActivity.this, ScoreActivity.class);
                     intent.putExtra("score",finalScore);
+                    intent.putExtra("answer1", answer[0]);
+                    intent.putExtra("answer2", answer[1]);
+                    intent.putExtra("answer3", answer[2]);
+                    intent.putExtra("answer4", answer[3]);
+                    intent.putExtra("answer5", answer[4]);
+                    intent.putExtra("answer6", answer[5]);
+                    intent.putExtra("answer7", answer[6]);
+                    intent.putExtra("answer8", answer[7]);
+                    intent.putExtra("answer9", answer[8]);
+                    intent.putExtra("answer10", answer[9]);
                     startActivity(intent);
                 }
                 textView.setText(question[questionIndex%question.length].getQuestionRedId());
@@ -77,15 +102,28 @@ public class MainActivity extends AppCompatActivity {
                 if (question[questionIndex].isAnswerTrue()){
                     Toast.makeText(MainActivity.this, R.string.incorrect, Toast.LENGTH_LONG).show();
                     finalScore--;
+                    answer[questionIndex] = false;
                 }
                 else {
                     Toast.makeText(MainActivity.this, R.string.correct, Toast.LENGTH_LONG).show();
-                    finalScore++;}
+                    finalScore++;
+                    answer[questionIndex] = true;
+                }
 
                 questionIndex += 1;
                 if (questionIndex == 10){
                     Intent intent = new Intent(MainActivity.this, ScoreActivity.class);
                     intent.putExtra("score",finalScore);
+                    intent.putExtra("answer1", answer[0]);
+                    intent.putExtra("answer2", answer[1]);
+                    intent.putExtra("answer3", answer[2]);
+                    intent.putExtra("answer4", answer[3]);
+                    intent.putExtra("answer5", answer[4]);
+                    intent.putExtra("answer6", answer[5]);
+                    intent.putExtra("answer7", answer[6]);
+                    intent.putExtra("answer8", answer[7]);
+                    intent.putExtra("answer9", answer[8]);
+                    intent.putExtra("answer10", answer[9]);
                     startActivity(intent);
                 }
                 textView.setText(question[questionIndex%question.length].getQuestionRedId());
@@ -100,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     @Override
@@ -118,8 +157,10 @@ public class MainActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle savedInstanceState){
         super.onSaveInstanceState(savedInstanceState);
         Log.d("System info", "Метод onSaveInstanceState() запущен!");
+
         savedInstanceState.putInt("questionIndex", questionIndex);
         savedInstanceState.putInt("finalScore", finalScore);
+        savedInstanceState.putBooleanArray("answer", answer);
     }
 
     @Override

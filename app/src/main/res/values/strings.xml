@@ -9,7 +9,11 @@
     <string name="hint">Подсказка</string>
     <string name="start_btn">начать</string>
     <string name="author_start">Alexandr Polyakov 2021</string>
-
+    <string name="answer">Ответ</string>
+    <string name="answers">ответы</string>
+    <string name="answer_main">Вы отвечали на вопросы как:</string>
+    <string name="human">Человек</string>
+    <string name="robot">Робот</string>
 
     <string name="question0">1. Вы являетесь человеком?</string>
     <string name="question1">2. У Вас по венам течет кровь?</string>
@@ -40,5 +44,6 @@
 
     <string name="return_btn">начать сначала!</string>
     <string name="todo">TODO</string>
+    <string name="_0">0</string>
 
 </resources>
